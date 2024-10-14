@@ -13,11 +13,11 @@ const io = socketIO(server);
 const mysql = require('mysql2/promise');
 
 // PORTA ONDE O SERVIÇO SERÁ INICIADO
-const port = 3100;
-const idClient = 'BotZeus';
+const port = 5250;
+const idClient = 'BotZeusII';
 
 // NUMEROS AUTORIZADOS
-const permissaoBot = ["556992102573@c.us","556993405268@c.us","556992762113@c.us","556993003146@c.us"];
+const permissaoBot = ["556992102573@c.us"];
 
 function delay(t, v) {
   return new Promise(function(resolve) {
@@ -79,7 +79,7 @@ const client = new Client({
   puppeteer: { headless: true,
   //executablePath: '/usr/bin/google-chrome-stable',
   //executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
-  //executablePath: '/usr/bin/chromium-browser',  
+  executablePath: '/usr/bin/chromium-browser',  
     args: [
       '--no-sandbox',
       '--disable-setuid-sandbox',
