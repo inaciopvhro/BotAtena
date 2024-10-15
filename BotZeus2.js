@@ -17,7 +17,7 @@ const port = 5250;
 const idClient = 'BotZeusII';
 
 // NUMEROS AUTORIZADOS
-const permissaoBot = ["556992102573@c.us"];
+const permissaoBot = ["556992102573@c.us","556984530659@c.us","556993082808@c.us","556992737539@c.us","556993546565C.us"];
 
 function delay(t, v) {
   return new Promise(function(resolve) {
@@ -97,7 +97,7 @@ client.initialize();
 
 // EVENTOS DE CONEXÃO EXPORTADOS PARA O INDEX.HTML VIA SOCKET
 io.on('connection', function(socket) {
-  socket.emit('message', '© BOT-Zeus - Iniciado');
+  socket.emit('message', '© BOT-Zeus II - Iniciado');
   socket.emit('qr', './check40.png');
 
 
@@ -105,19 +105,19 @@ client.on('qr', (qr) => {
     console.log('QR RECEIVED', qr);
     qrcode.toDataURL(qr, (err, url) => {
       socket.emit('qr', url);
-      socket.emit('message', '© BOT-Zeus QRCode recebido, aponte a câmera do seu celular!');
+      socket.emit('message', '© BOT-Zeus II QRCode recebido, aponte a câmera do seu celular!');
     });
 });
 
 if (client.on('authenticated', (session) => {
     socket.emit('authenticated', '© BOT-Zeus Autenticado!');
-    socket.emit('message', '© BOT-Zeus Autenticado!');
-    console.log('© BOT-Zeus Autenticado');
+    socket.emit('message', '© BOT-Zeus II Autenticado!');
+    console.log('© BOT-Zeus II Autenticado');
 }));
 
 client.on('auth_failure', function() {
     socket.emit('message', '© BOT-Zeus Falha na autenticação, reiniciando...');
-    console.error('© BOT-Zeus Falha na autenticação');
+    console.error('© BOT-Zeus II Falha na autenticação');
 });
 
 client.on('change_state', state => {
@@ -127,14 +127,14 @@ client.on('change_state', state => {
 
 client.on('disconnected', (reason) => {
   socket.emit('message', '© BOT-Zeus Cliente desconectado!');
-  console.log('© BOT-Zeus Cliente desconectado', reason);
+  console.log('© BOT-Zeu II Cliente desconectado', reason);
   
 });
  (client.on('ready', async () => {
-  socket.emit('ready', '© BOT-Zeus Dispositivo pronto!');
-  socket.emit('message', '© BOT-Zeus Dispositivo pronto!');
+  socket.emit('ready', '© BOT-Zeus II Dispositivo pronto!');
+  socket.emit('message', '© BOT-Zeus II Dispositivo pronto!');
   socket.emit('qr', './whatsapp40.png');
-  console.log('© BOT-Zeus Dispositivo pronto');
+  console.log('© BOT-Zeus II Dispositivo pronto');
   const groups = await client.getChats()
   for (const group of groups){
     if(group.id.server.includes('g.us')){
@@ -142,7 +142,7 @@ client.on('disconnected', (reason) => {
       socket.emit('mesid', group.id._serialized.split('@')[0]);
     }
   }
-  socket.emit('var', '© BOT-Zeus Grupos atualizados!');
+  socket.emit('var', '© BOT-Zeus II Grupos atualizados!');
   }));
 });
 
