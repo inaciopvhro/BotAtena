@@ -8,10 +8,9 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.122.0">
     <title>Bot Zeus II</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/cheatsheet/">
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/navbar-fixed/">
+        
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
@@ -92,10 +91,9 @@
         display: block !important;
       }
     </style>
-   
-    <!-- Custom styles for this template -->
-    <link href="navbar-fixed.css" rel="stylesheet">
-    <link href="cheatsheet.css" rel="stylesheet">
+    
+    <link href="sidebars.css" rel="stylesheet">
+    
   </head>
   <body class="bg-body-tertiary">
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -128,14 +126,14 @@
         <li>
           <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
             <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
-            Claro
+            Light
             <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
           </button>
         </li>
         <li>
           <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
             <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
-            Escuro
+            Dark
             <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
           </button>
         </li>
@@ -147,61 +145,65 @@
           </button>
         </li>
       </ul>
-    </div>
-  
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    </div>   
+
+<nav class="navbar navbar-expand navbar-dark bg-dark" aria-label="Second navbar example">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Whatsapp API Bot Zeus</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <form class="d-flex" role="search">
-      <button class="btn btn-outline-success" onClick="location.assign(location.href)">Atualizar Pagina</button>
-    </form>
+    <div class="collapse navbar-collapse" id="navbarsExample2">
+      <ul class="navbar-nav me-auto">
+        <a class="navbar-brand" href="#">Whatsapp API Bot Zeus II</a> 
+      </ul>
+      <form class="d-flex">
+        <button class="btn btn-outline-success" onClick="location.assign(location.href)">Atualizar Pagina</button>
+      </form>
+    </div>
   </div>
 </nav>
 
-<div class="bd-cheatsheet container bg-body" style="width: 400px´´´´´p;">
-  <section id="content">
-    <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3">Modulos</h2>
-      <article class="my-3" id="typography">
-        <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
-          <img decoding="async" src="" alt="QR Code" id="qrcode">
-          <h3>Açoes</h3>
-          <ul class="logs"></ul>
-        </div>
-        <div style="width: 100vh;">
-        <div id="stop">
-          <button class="btn btn-primary" type="button" disabled>
-            <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
-            <span role="status">Atualizando Grupos</span>
-          </button>
-        </div>
-
-          <div class="bd-example-snippet bd-code-snippet">
-            <div class="bd-example m-0 border-0">
-              <table class="table table-striped">
-                <thead>
-                <tr>
-                  <th scope="col">ID</th>
-                  <th scope="col">Nome Grupo</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td class="id"></td>
-                  <td class="nome"></td>
-                </tr>
-                </tbody>
-              </table>
-              
-        </div>
-        </div>
-        </div>
-      </article>
-    </section>
-     
-</div>
+<main class="d-flex flex-nowrap">
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 400px;">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+      <span class="fs-4">Ações</span>
+    </a>
+    
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
+        <img decoding="async" src="" alt="QR Code" id="qrcode">
+        <hr>
+        <ul class="logs"></ul>
+      </div>
+    </ul>
+  </div>
+  <div class="b-example-divider b-example-vr"></div>
+  <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 70%;">
+    <div id="stop">
+      <button class="btn btn-primary" type="button" disabled>
+        <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+        <span role="status">Atualizando Grupos</span>
+      </button>
+    </div> 
+    <div class="bd-example-snippet bd-code-snippet">
+      <div class="bd-example m-0 border-0">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome Grupo</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td class="id"></td>
+            <td class="nome"></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" crossorigin="anonymous"></script>
@@ -235,6 +237,6 @@
 		});
 	</script>  
   <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="cheatsheet.js"></script>
+  
   </body>
 </html>
