@@ -97,51 +97,44 @@ client.initialize();
 
 // EVENTOS DE CONEXÃO EXPORTADOS PARA O INDEX.HTML VIA SOCKET
 io.on('connection', function(socket) {
-  socket.emit('message', '© BOT-Zeus II - Iniciado');
+  socket.emit('message', '© BOT-ATENAS - Iniciado');
   socket.emit('qr', './whatsappDesconetado.png');
 
 client.on('qr', (qr) => {
     console.log('QR RECEIVED', qr);
     qrcode.toDataURL(qr, (err, url) => {
       socket.emit('qr', url);
-      socket.emit('message', '© BOT-Zeus II QRCode recebido, aponte a câmera do seu celular!');
+      socket.emit('message', '© BOT-ATENAS QRCode recebido, aponte a câmera do seu celular!');
     });
 });
 
 client.on('authenticated', (session) => {
-    socket.emit('authenticated', '© BOT-Zeus Autenticado!');
-    socket.emit('message', '© BOT-Zeus II Autenticado!');
-    console.log('© BOT-Zeus II Autenticado');
+    socket.emit('authenticated', '© BOT-ATENAS Autenticado!');
+    socket.emit('message', '© BOT-ATENAS Autenticado!');
+    console.log('© BOT-ATENAS Autenticado');
 });
 
 client.on('auth_failure', function() {
-    socket.emit('message', '© BOT-Zeus Falha na autenticação, reiniciando...');
-    console.error('© BOT-Zeus II Falha na autenticação');
+    socket.emit('message', '© BOT-ATENAS Falha na autenticação, reiniciando...');
+    console.error('© BOT-ATENAS Falha na autenticação');
 });
 
 client.on('change_state', state => {
-  console.log('© BOT-Zeus Status de conexão: ', state );
-  socket.emit('message', '© BOT-Zeus Status de conexão: '+ state);
+  console.log('© BOT-ATENAS Status de conexão: ', state );
+  socket.emit('message', '© BOT-ATENAS Status de conexão: '+ state);
 });
 
 client.on('disconnected', (reason) => {
-  socket.emit('message', '© BOT-Zeus Cliente desconectado!');
+  socket.emit('message', '© BOT-ATENAS Cliente desconectado!');
   console.log('© BOT-Zeu II Cliente desconectado', reason);
   
 });
 client.on('ready', async () => {
-  socket.emit('ready', '© BOT-Zeus II Dispositivo pronto!');
-  socket.emit('message', '© BOT-Zeus II Dispositivo pronto!');
+  socket.emit('ready', '© BOT-ATENAS Dispositivo pronto!');
+  socket.emit('message', '© BOT-ATENAS Dispositivo pronto!');
   socket.emit('qr', './whatsappConectado.png');
-  console.log('© BOT-Zeus II Dispositivo pronto');
-  const groups = await client.getChats()
-  for (const group of groups){
-    if(group.id.server.includes('g.us')){
-      socket.emit('mesnome', group.name);
-      socket.emit('mesid', group.id._serialized.split('@')[0]);
-    }
-  }
-  socket.emit('var', '© BOT-Zeus II Grupos atualizados!');
+  console.log('© BOT-ATENAS Dispositivo pronto');
+
   });
 });
 
@@ -516,7 +509,7 @@ client.on('message_create', async msg => {
 client.on('group_join', async (notification) => {
   // LISTAR GRUPOS
   const groups = await client.getChats()
-  console.log('-----------------------------\nBOT-Zeus II Grupos atualizados:\n-----------------------------')
+  console.log('-----------------------------\nBOT-ATENAS Grupos atualizados:\n-----------------------------')
   try{
     for (const group of groups){
       if(group.id.server.includes('g.us')){
@@ -580,5 +573,5 @@ client.on('group_join', async (notification) => {
 // INITIALIZE DO SERVIÇO
 
 server.listen(port, function() {
-  console.log('© Bot Zeus II - Aplicativo rodando na porta *: ' + port);
+  console.log('© Bot ATENAS - Aplicativo rodando na porta *: ' + port);
 });
